@@ -5,11 +5,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
     <div class="content">
       <div class="text-box">
-        <p id="text-to-type">Text to Type</p>
+        <p class="main-text" id="text-to-type">Press Enter to Start</p>
       </div>
 
       <div class="stats-box">
@@ -17,9 +18,17 @@
         <p class="stat" id="score">Score: 0</p>
       </div>
 
+      <div class="modal" id="game-over-box">
+        <div class="modal-content" id="game-over-message">
+          <p class="main-text" id="game-over-message"></p>
+          <button type="button" id="game-over-restart-btn">Restart</button>
+        </div>
+      </div>
+
       <input class="user-input" type="text" id="user-input" placeholder="Type Here!">
 
-      <button type="button" id="restart-btn">Restart</button>
+      <button type="button" id='restart-btn'>Restart</button>
     </div>
+    <script src="game.js"></script>
   </body>
 </html>

@@ -4,6 +4,9 @@ let userInput = document.getElementById('user-input');
 let timerDisplay = document.getElementById('timer');
 let scoreDisplay = document.getElementById('score');
 let restartBtn = document.getElementById('restart-btn');
+let gameOverModal = document.getElementById('game-over-box');
+let gameOverMessage = document.getElementById('game-over-message');
+let gameOverRestart = document.getElementById('game-over-restart-btn')
 
 let timeLimit = 60;  // Time in seconds
 let timeLeft = timeLimit;
@@ -29,6 +32,8 @@ function startGame() {
     userInput.disabled = false;
     userInput.focus();
 
+    //Hide gameOverModal
+    gameOverModal.style.display = "none"
     // Pick a random sentence from the texts array
     let randomText = texts[Math.floor(Math.random() * texts.length)];
     textToType.textContent = randomText;
@@ -57,24 +62,35 @@ function updateTimer() {
     }
 }
 
+
 // Check if the user is typing correctly
 function checkTyping() {
     if (userInput.value === textToType.textContent) {
         // Correctly typed the text
         score++;
         scoreDisplay.textContent = `Score: ${score}`;
-        startGame(); // Restart with a new text
+        //startGame(); // Restart with a new text
+        userInput.value = ''
+        let randomText = texts[Math.floor(Math.random() * texts.length)];
+        textToType.textContent = randomText;
     }
 }
 
 // End the game when the time is up
 function endGame() {
+    userInput.textContent = '';
     userInput.disabled = true;
-    alert(`Time's up! Your final score is: ${score}`);
+    gameOverMessage.textContent = `Time's up! Your final score is: ${score}`;
+    gameOverModal.style.display = "block";
 }
 
 // Restart the game when the button is clicked
 restartBtn.addEventListener('click', startGame);
 
 // Start the game initially
-startGame();
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        startGame();
+        document.removeEventListener('keydown', arguments.callee)
+    }
+});
