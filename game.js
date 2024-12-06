@@ -6,6 +6,7 @@ let scoreDisplay = document.getElementById('score');
 let restartBtn = document.getElementById('restart-btn');
 let gameOverModal = document.getElementById('game-over-box');
 let gameOverMessage = document.getElementById('game-over-message');
+let gameOverRestart = document.getElementById('game-over-restart-btn')
 
 let timeLimit = 60;  // Time in seconds
 let timeLeft = timeLimit;
