@@ -5,6 +5,7 @@ let timerDisplay = document.getElementById('timer');
 let scoreDisplay = document.getElementById('score');
 let restartBtn = document.getElementById('restart-btn');
 let gameOverModal = document.getElementById('game-over-box');
+let gameOverBackground = document.getElementById('game-over-background')
 let gameOverMessage = document.getElementById('game-over-message');
 let gameOverRestart = document.getElementById('game-over-restart-btn')
 
@@ -13,6 +14,7 @@ let timeLeft = timeLimit;
 let score = 0;
 let gameInterval;
 let timerInterval;
+let randomText;
 
 // List of texts to type
 const texts = [
@@ -33,9 +35,11 @@ function startGame() {
     userInput.focus();
 
     //Hide gameOverModal
-    gameOverModal.style.display = "none"
+    gameOverModal.style.display = "none";
+    gameOverBackground.style.display = "none";
+
     // Pick a random sentence from the texts array
-    let randomText = texts[Math.floor(Math.random() * texts.length)];
+    randomText = texts[Math.floor(Math.random() * texts.length)];
     textToType.textContent = randomText;
 
     // Reset timer
@@ -62,7 +66,6 @@ function updateTimer() {
     }
 }
 
-
 // Check if the user is typing correctly
 function checkTyping() {
     if (userInput.value === textToType.textContent) {
@@ -71,7 +74,11 @@ function checkTyping() {
         scoreDisplay.textContent = `Score: ${score}`;
         //startGame(); // Restart with a new text
         userInput.value = ''
-        let randomText = texts[Math.floor(Math.random() * texts.length)];
+        
+        let currentText = randomText;
+        while (currentText === randomText) {
+            randomText = texts[Math.floor(Math.random() * texts.length)];
+        }
         textToType.textContent = randomText;
     }
 }
@@ -82,10 +89,13 @@ function endGame() {
     userInput.disabled = true;
     gameOverMessage.textContent = `Time's up! Your final score is: ${score}`;
     gameOverModal.style.display = "block";
+    gameOverBackground.style.display = "block";
+
 }
 
 // Restart the game when the button is clicked
 restartBtn.addEventListener('click', startGame);
+gameOverRestart.addEventListener('click', startGame);
 
 // Start the game initially
 document.addEventListener('keydown', function(event) {
