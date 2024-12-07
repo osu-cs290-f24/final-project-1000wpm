@@ -3,10 +3,12 @@ let userInput = document.getElementById('user-input');
 let timerDisplay = document.getElementById('timer');
 let scoreDisplay = document.getElementById('score');
 let restartBtn = document.getElementById('restart-btn');
+let homeBtn = document.getElementById("home-btn");
 let gameOverModal = document.getElementById('game-over-box');
 let gameOverBackground = document.getElementById('game-over-background');
 let gameOverMessage = document.getElementById('game-over-message');
 let gameOverRestart = document.getElementById('game-over-restart-btn');
+let gameOverHome = document.getElementById("game-over-home-btn");
 
 let timeLimit = 60;  // Time in seconds
 let timeLeft = timeLimit;
@@ -154,12 +156,6 @@ function checkTyping() {
     }
 }
 
-restartBtn.addEventListener('click', function () {
-    endGame();
-    startGame();
-});
-gameOverRestart.addEventListener('click', startGame);
-
 userInput.addEventListener('keydown', function(event) {
     if (event.key && !gameInterval) {
         startGame();
@@ -167,3 +163,19 @@ userInput.addEventListener('keydown', function(event) {
 });
 
 window.addEventListener('load', loadWords);
+
+
+//Restart buttons restart the game
+restartBtn.addEventListener('click', function () {
+    endGame();
+    startGame();
+});
+gameOverRestart.addEventListener('click', startGame);
+
+//Home buttons switch to home page
+homeBtn.addEventListener('click', () => {
+    window.location.href = '/';
+});
+gameOverHome.addEventListener('click', () => {
+    window.location.href = '/';
+})
