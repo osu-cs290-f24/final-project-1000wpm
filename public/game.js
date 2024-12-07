@@ -154,16 +154,10 @@ function checkTyping() {
     }
 }
 
-function endGame() {
-    clearInterval(gameInterval);
-    userInput.value = '';
-    userInput.disabled = true;
-    gameOverMessage.textContent = `Time's up! Your final score is: ${score}`;
-    gameOverModal.style.display = "block";
-    gameOverBackground.style.display = "block";
-}
-
-restartBtn.addEventListener('click', startGame);
+restartBtn.addEventListener('click', function () {
+    endGame();
+    startGame();
+});
 gameOverRestart.addEventListener('click', startGame);
 
 userInput.addEventListener('keydown', function(event) {
