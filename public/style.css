@@ -127,13 +127,30 @@ body {
   vertical-align: middle;
 }
 
-#game-over-restart-btn {
+.restart-and-home {
+  display:flex;
+  height: 35px;
+  max-width: 180px;
+  margin:auto;
+}
+.restart-btn {
   display: block;
   margin: auto;
   height: 25px;
   width: 65px;
   text-align: center;
   border-radius: 5px;
+  float: inline-start;
+}
+
+.home-btn {
+  display: block;
+  margin: auto;
+  height: 25px;
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+  float:inline-end;
 }
 
 button:hover {
@@ -190,3 +207,23 @@ button:hover {
   margin-top: 10px; /* Spacing between word and user input */
 }
 
+.home-page-content {
+  margin: auto;
+  margin-top: 25%;
+  vertical-align: middle;
+
+}
+
+#username-input {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+#play-button {
+  display: block;
+  margin: auto;
+  height: 35px;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+}
