@@ -11,7 +11,7 @@ body {
 }
 
 .content .text-box {
-  display: flex;
+  display: inline;
   margin: auto;
   min-width: 55%;  /* Changed from max-width to min-width */
   width: auto;     /* Allow width to grow as needed */
@@ -207,16 +207,28 @@ button:hover {
   margin-top: 10px; /* Spacing between word and user input */
 }
 
-.home-page-content {
+.home-content {
+  display: grid;
+  grid-template-columns: 25vw 50vw 25vw;
+  margin: 0;
+  margin-top: 10Svw;
+}
+
+.username-play {
+  position: relative;
+  justify-self: center;
   margin: auto;
-  margin-top: 25%;
+  margin-top: 20%;
   vertical-align: middle;
+  width: 50vw;
+  text-align: center;
 
 }
 
 #username-input {
   font-size: 25px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  margin: auto;
 }
 
 #play-button {
@@ -226,4 +238,37 @@ button:hover {
   width: 80px;
   text-align: center;
   border-radius: 5px;
+}
+
+.leaderboard {
+  justify-self: right;
+  width: 175px;
+  color: rgb(128, 128, 128);
+}
+
+.leaderboard-header {
+  font-size: 23px;
+  margin: auto;
+}
+
+.leaderboard-content {
+  font-size: 20px;
+  display: block;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: rgb(128, 128, 128);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#scores {
+  width: 100%;
+}
+
+.line-name {
+  width: 90px;
+}
+
+.line-score {
+  text-align: right;
 }

@@ -1,7 +1,18 @@
-<div class="content">
-  <div class="home-page-content">
+<div class="home-content">
+  <div class="leaderboard">
+    <p class="leaderboard-header">Leaderboard</p>
+    <div class="leaderboard-content">
+      <span class="leaderboard-header" id="name">Name</span><span class="leaderboard-header" id="score">Score</span>
+      <table id="scores">
+        
+        {{#each topScores}}
+          {{> leaderboard_score}}
+        {{/each}}
+      </table>
+    </div>
+  </div>
+  <div class="username-play">
    <input class="user-input" type="text" id="username-input" placeholder="Input a username to play" autocomplete="off">
    <button type="button" id="play-button">Type!</button>
   </div>
-  <script src="home.js"></script>
 </div>

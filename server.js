@@ -5,6 +5,8 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+var leaderboard = require("./leaderboard.json");
+
 // Set up Handlebars as the view engine
 app.engine('hbs', exphbs.engine({
     extname: '.hbs',
@@ -19,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.render('home', {
         title: 'Super Cool Typing Game',
+        topScores: leaderboard,
     });
 });
 

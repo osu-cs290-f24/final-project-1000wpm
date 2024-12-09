@@ -4,7 +4,9 @@
   "description": "A simple typing game with Node.js and Handlebars",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "handlebars views/partials/leaderboard_score.hbs -f public/leaderboard_score.js",
+    "prestart": "npm run build"
   },
   "dependencies": {
     "express": "^4.21.2",
