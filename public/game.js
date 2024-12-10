@@ -11,7 +11,7 @@ let gameOverRestart = document.getElementById('game-over-restart-btn');
 let gameOverHome = document.getElementById("game-over-home-btn");
 
 let timerStarted = false;
-let timeLimit = 3;  // Time in seconds
+let timeLimit = 60;  // Time in seconds
 let timeLeft = timeLimit;
 let score = 0;
 let gameInterval;

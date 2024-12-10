@@ -1,24 +1,132 @@
-/* General Styles */
+/* Global Styles */
 body {
   background-color: rgb(17, 17, 17);
   font-family: 'Roboto Mono';
 }
 
-/* Utility Classes */
 .hidden {
   display: none !important;
 }
 
-button:hover {
-  cursor: pointer;
-}
-
-/* Content Container */
+/* Content Styles */
 .content {
   display: block;
   margin: auto;
-  margin-top: 10vw;
+  margin-top: 10Svw;
   width: 75vw;
+}
+
+.content .text-box {
+  display: inline;
+  margin: auto;
+  min-width: 55%;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  height: 200px;
+  position: relative;
+}
+
+.main-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  color: rgb(128, 128, 128);
+  font-size: 32px;
+  white-space: nowrap;
+}
+
+.content .user-input {
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+  width: 66%;
+  height: 30px;
+  font-size: large;
+}
+
+.content .stats-box {
+  margin: auto;
+  margin-bottom: 15px;
+  max-width: 200px;
+  height: 30px;
+  font-size: large;
+}
+
+.stats-box .stat {
+  margin: auto;
+  color: rgb(128, 128, 128);
+}
+
+/* Button Styles */
+#restart-btn, .restart-btn, .home-btn {
+  font-family: 'Roboto Mono';
+  background-color: transparent;
+  color: rgb(128, 128, 128);
+  border: 1px solid rgb(128, 128, 128);
+  display: block;
+  margin: auto;
+  height: 25px;
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.home-btn:hover, .restart-btn:hover {
+  background-color: rgb(128, 128, 128);
+  color: rgb(17, 17, 17);
+}
+
+.restart-and-home button,
+#submit-score-btn {
+  font-family: 'Roboto Mono';
+  background-color: transparent;
+  color: rgb(128, 128, 128);
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.restart-and-home button:hover,
+#submit-score-btn:hover {
+  background-color: rgb(128, 128, 128);
+  color: rgb(17, 17, 17);
+}
+
+#play-button {
+  display: block;
+  margin: auto;
+  height: 35px;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  font-family: 'Roboto Mono';
+  background-color: transparent;
+  color: rgb(128, 128, 128);
+  border: 1px solid rgb(128, 128, 128);
+  padding: 5px 10px;
+}
+
+#play-button:hover {
+  background-color: rgb(128, 128, 128);
+  color: rgb(17, 17, 17);
+}
+
+/* Text Styles */
+.correct-letter {
+  color: #00ff00;
+}
+
+.incorrect-letter {
+  color: #ff0000;
+}
+
+.untyped-letter {
+  color: rgb(128, 128, 128);
 }
 
 .text-box {
@@ -32,20 +140,8 @@ button:hover {
   width: 55vw;
   height: 200px;
   margin: auto;
-  text-align: left; 
+  text-align: left;
   line-height: 1.5;
-}
-
-/* Text Styling */
-.main-text {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-  align-items: center;
-  justify-items: center;
-  color: rgb(128, 128, 128);
-  font-size: 32px;
-  white-space: nowrap;
 }
 
 .previous-word {
@@ -65,17 +161,6 @@ button:hover {
   padding-left: 32px;
 }
 
-/* Input Fields */
-.content .user-input,
-.user-input {
-  display: block;
-  margin: auto;
-  margin-bottom: 15px;
-  width: 66%;
-  height: 30px;
-  font-size: large;
-}
-
 .user-input {
   position: relative;
   opacity: 1;
@@ -90,64 +175,77 @@ button:hover {
   width: 80%;
 }
 
-/* Highlighted Letters */
-.correct-letter {
-  color: #00ff00;
+#user-input-display {
+  margin-top: 10px;
 }
 
-.incorrect-letter {
-  color: #ff0000;
+/* Home Page Styles */
+.home-content {
+  display: grid;
+  grid-template-columns: 25vw 50vw 25vw;
+  margin: 0;
+  margin-top: 10Svw;
 }
 
-.untyped-letter {
-  color: rgb(128, 128, 128);
-}
-
-/* Stats Section */
-.content .stats-box {
+.username-play {
+  position: relative;
+  justify-self: center;
   margin: auto;
-  margin-bottom: 15px;
-  max-width: 200px;
-  height: 30px;
-  font-size: large;
-}
-
-.stats-box .stat {
-  margin: auto;
-}
-
-#timer {
-  float: inline-start;
-  color: rgb(128, 128, 128);
-}
-
-#score {
-  float: inline-end;
-  color: rgb(128, 128, 128);
-}
-
-/* Button Styling */
-button, .restart-btn, .home-btn, #play-button, #submit-score-btn {
-  font-family: 'Roboto Mono';
-  background-color: transparent;
-  color: rgb(128, 128, 128);
-  border: 1px solid rgb(128, 128, 128);
-  border-radius: 5px;
-  padding: 5px 10px;
-}
-
-.restart-btn, .home-btn {
-  display: block;
-  margin: auto;
-  height: 25px;
-  width: 65px;
+  margin-top: 20%;
+  vertical-align: middle;
+  width: 50vw;
   text-align: center;
 }
 
-.restart-btn:hover, .home-btn:hover,
-button:hover, #submit-score-btn:hover, #play-button:hover {
-  background-color: rgb(128, 128, 128);
-  color: rgb(17, 17, 17);
+#username-input {
+  font-size: 25px;
+  padding-bottom: 20px;
+  margin: auto;
+}
+
+/* Leaderboard Styles */
+.leaderboard {
+  justify-self: right;
+  width: 175px;
+  color: rgb(128, 128, 128);
+}
+
+.leaderboard-header {
+  font-size: 23px;
+  margin: auto;
+}
+
+.leaderboard-content {
+  font-size: 20px;
+  display: block;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: rgb(128, 128, 128);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#scores {
+  width: 100%;
+}
+
+.line-name {
+  width: 90px;
+}
+
+.line-score {
+  text-align: right;
+}
+
+/* Save Score Section Styles */
+.save-score-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.save-score-section input {
+  margin-right: 10px;
+  padding: 5px;
 }
 
 /* Modal Styles */
@@ -172,9 +270,11 @@ button:hover, #submit-score-btn:hover, #play-button:hover {
   height: auto;
   min-height: 200px;
   background-color: rgb(17, 17, 17);
-  border: solid 1px rgb(128, 128, 128);
+  border-style: solid;
+  border-color: rgb(128, 128, 128);
   border-radius: 5px;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+  font-family: 'Roboto Mono';
   color: rgb(128, 128, 128);
 }
 
@@ -188,30 +288,14 @@ button:hover, #submit-score-btn:hover, #play-button:hover {
   line-height: 1.5;
 }
 
-/* Leaderboard */
-.leaderboard {
-  justify-self: right;
-  width: 175px;
+.modal-content .main-text {
+  vertical-align: middle;
+  font-family: 'Roboto Mono';
   color: rgb(128, 128, 128);
+  font-size: 32px;
 }
 
-.leaderboard-header {
-  font-size: 23px;
-  margin: auto;
-}
-
-.leaderboard-content {
-  font-size: 20px;
-  display: block;
-  border: 2px solid;
-  border-radius: 3px;
-  border-color: rgb(128, 128, 128);
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-/* Game Buttons */
-.game-button-container, .game-buttons {
+.game-button-container {
   display: flex;
   justify-content: center;
   width: 150px;
@@ -220,12 +304,25 @@ button:hover, #submit-score-btn:hover, #play-button:hover {
   gap: 10px;
 }
 
-.save-score-section {
-  margin-top: 20px;
-  text-align: center;
+.game-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin: auto;
 }
 
-.save-score-section input {
-  margin-right: 10px;
-  padding: 5px;
+#submit-score-btn {
+  font-family: 'Roboto Mono';
+  background-color: transparent;
+  color: rgb(128, 128, 128);
+  border: 1px solid rgb(128, 128, 128);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.score-submit p {
+  color: rgb(128, 128, 128);
+  font-family: 'Roboto Mono';
+  margin: 15px 0;
 }
