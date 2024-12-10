@@ -10,21 +10,26 @@
 
   <div class="modal-backdrop" id="game-over-background"></div>
   <div class="modal" id="game-over-box">
-    <div class="modal-content" id="game-over-message">
+    <div class="modal-content">
       <p class="main-text" id="game-over-message"></p>
+      <div class="score-submit">
+        <p>Would you like to save your score?</p>
+        <div class="leaderboard-submit">
+          <button type="button" id="submit-score-btn">Save Score</button>
+        </div>
+      </div>
     </div>
     <div class="restart-and-home">
-    <button type="button" class="restart-btn" id="game-over-restart-btn">Restart</button>
-    <button type="button" class="home-btn" id="game-over-home-btn">Home</button>
+      <button type="button" class="restart-btn" id="game-over-restart-btn">Restart</button>
+      <button type="button" class="home-btn" id="game-over-home-btn">Home</button>
     </div>
   </div>
 
   <input class="user-input" type="text" id="user-input" placeholder="Type Here!" autocomplete="off">
 
-  <div class="restart-and-home">
-  <button type="button" class="restart-btn" id='restart-btn'>Restart</button>
-  <button type="button" class="home-btn" id="home-btn">Home</button>
+  <div class="game-button-container">
+    <button type="button" class="restart-btn" id='restart-btn'>Restart</button>
+    <button type="button" class="home-btn" id="home-btn">Home</button>
   </div>
 </div>
 <script src="/game.js"></script>
-

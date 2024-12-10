@@ -1,160 +1,24 @@
+/* General Styles */
 body {
   background-color: rgb(17, 17, 17);
   font-family: 'Roboto Mono';
 }
 
-.content {
-  display: block;
-  margin: auto;
-  margin-top: 10Svw;
-  width: 75vw;
-}
-
-.content .text-box {
-  display: inline;
-  margin: auto;
-  min-width: 55%;  /* Changed from max-width to min-width */
-  width: auto;     /* Allow width to grow as needed */
-  align-items: center;
-  justify-content: center;
-  margin-top: 10%;
-  height: 200px;
-  position: relative;  /* For positioning child elements */
-}
-
-.main-text {
-  display: grid;  /* Change to grid layout */
-  grid-template-columns: 1fr 1fr 1fr;  /* Three equal columns */
-  width: 100%;
-  align-items: center;
-  justify-items: center;  /* Center items in their grid cells */
-  color: rgb(128, 128, 128);
-  font-size: 32px;
-  white-space: nowrap;
-}
-
-.content .user-input {
-  display:block;
-  margin:auto;
-  margin-bottom: 15px;
-  width: 66%;
-  height: 30px;
-  font-size: large;
-}
-
-.content .stats-box {
-  margin: auto;
-  margin-bottom: 15px;
-  max-width: 200px;
-  height: 30px;
-  font-size: large;
-}
-
-.stats-box .stat {
-  margin:auto;
-}
-
-#timer {
-  float:inline-start;
-}
-
-#score {
-  float:inline-end;
-}
-
-#restart-btn {
-  display: block;
-  margin: auto;
-  height: 25px;
-  width: 65px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-.correct-letter {
-  color: #00ff00;  /* Green for correct letters */
-}
-
-.incorrect-letter {
-  color: #ff0000;  /* Red for incorrect letters */
-}
-
-.untyped-letter {
-  color: rgb(128, 128, 128);  /* Default gray for untyped letters */
-}
-
-.modal-backdrop {
-  display: none;
-  position:fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vw;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -85%);
-  width: 55vw;
-  height: 200px;
-  background-color: gainsboro;
-  border-style: solid;
-  border-color: rgb(80, 80, 80);
-  border-radius: 5px;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
-  line-height: 200px;
-}
-
-.modal .modal-content {
-  text-align: center;
-  font-size: 20px;
-  margin: auto;
-  padding: 20px;
-  border: 1px;
-  width: 80%;
-  height: 50px;
-  padding-bottom: 20px;
-  padding-top: 50px;
-  line-height: 50px;
-}
-
-.modal-content .main-text {
-  vertical-align: middle;
-}
-
-.restart-and-home {
-  display:flex;
-  height: 35px;
-  max-width: 180px;
-  margin:auto;
-}
-.restart-btn {
-  display: block;
-  margin: auto;
-  height: 25px;
-  width: 65px;
-  text-align: center;
-  border-radius: 5px;
-  float: inline-start;
-}
-
-.home-btn {
-  display: block;
-  margin: auto;
-  height: 25px;
-  width: 65px;
-  text-align: center;
-  border-radius: 5px;
-  float:inline-end;
+/* Utility Classes */
+.hidden {
+  display: none !important;
 }
 
 button:hover {
   cursor: pointer;
+}
+
+/* Content Container */
+.content {
+  display: block;
+  margin: auto;
+  margin-top: 10vw;
+  width: 75vw;
 }
 
 .text-box {
@@ -168,25 +32,48 @@ button:hover {
   width: 55vw;
   height: 200px;
   margin: auto;
-  text-align: left; /* Align text to the left */
-  line-height: 1.5; /* Add some line spacing */
+  text-align: left; 
+  line-height: 1.5;
+}
+
+/* Text Styling */
+.main-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  color: rgb(128, 128, 128);
+  font-size: 32px;
+  white-space: nowrap;
 }
 
 .previous-word {
   color: rgb(80, 80, 80);
-  justify-self: end;  /* Align to right of its cell */
-  padding-right: 32px;  /* Space from the current word */
+  justify-self: end;
+  padding-right: 32px;
 }
 
 .current-word {
   color: rgb(128, 128, 128);
-  justify-self: center;  /* Center in its cell */
+  justify-self: center;
 }
 
 .next-word {
   color: rgb(100, 100, 100);
-  justify-self: start;  /* Align to left of its cell */
-  padding-left: 32px;  /* Space from the current word */
+  justify-self: start;
+  padding-left: 32px;
+}
+
+/* Input Fields */
+.content .user-input,
+.user-input {
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+  width: 66%;
+  height: 30px;
+  font-size: large;
 }
 
 .user-input {
@@ -199,47 +86,109 @@ button:hover {
   color: rgb(128, 128, 128);
   font-family: 'Roboto Mono', monospace;
   font-size: 32px;
-  text-align: center; /* Center the input text */
-  width: 80%; /* Make input width match text width */
-}
-
-#user-input-display {
-  margin-top: 10px; /* Spacing between word and user input */
-}
-
-.home-content {
-  display: grid;
-  grid-template-columns: 25vw 50vw 25vw;
-  margin: 0;
-  margin-top: 10Svw;
-}
-
-.username-play {
-  position: relative;
-  justify-self: center;
-  margin: auto;
-  margin-top: 20%;
-  vertical-align: middle;
-  width: 50vw;
   text-align: center;
-
+  width: 80%;
 }
 
-#username-input {
-  font-size: 25px;
-  padding-bottom: 20px;
+/* Highlighted Letters */
+.correct-letter {
+  color: #00ff00;
+}
+
+.incorrect-letter {
+  color: #ff0000;
+}
+
+.untyped-letter {
+  color: rgb(128, 128, 128);
+}
+
+/* Stats Section */
+.content .stats-box {
+  margin: auto;
+  margin-bottom: 15px;
+  max-width: 200px;
+  height: 30px;
+  font-size: large;
+}
+
+.stats-box .stat {
   margin: auto;
 }
 
-#play-button {
+#timer {
+  float: inline-start;
+  color: rgb(128, 128, 128);
+}
+
+#score {
+  float: inline-end;
+  color: rgb(128, 128, 128);
+}
+
+/* Button Styling */
+button, .restart-btn, .home-btn, #play-button, #submit-score-btn {
+  font-family: 'Roboto Mono';
+  background-color: transparent;
+  color: rgb(128, 128, 128);
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.restart-btn, .home-btn {
   display: block;
   margin: auto;
-  height: 35px;
-  width: 80px;
+  height: 25px;
+  width: 65px;
   text-align: center;
-  border-radius: 5px;
 }
 
+.restart-btn:hover, .home-btn:hover,
+button:hover, #submit-score-btn:hover, #play-button:hover {
+  background-color: rgb(128, 128, 128);
+  color: rgb(17, 17, 17);
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(17, 17, 17, 0.8);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55vw;
+  height: auto;
+  min-height: 200px;
+  background-color: rgb(17, 17, 17);
+  border: solid 1px rgb(128, 128, 128);
+  border-radius: 5px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+  color: rgb(128, 128, 128);
+}
+
+.modal .modal-content {
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  height: auto;
+  line-height: 1.5;
+}
+
+/* Leaderboard */
 .leaderboard {
   justify-self: right;
   width: 175px;
@@ -261,14 +210,22 @@ button:hover {
   padding-right: 5px;
 }
 
-#scores {
-  width: 100%;
+/* Game Buttons */
+.game-button-container, .game-buttons {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 35px;
+  margin: auto;
+  gap: 10px;
 }
 
-.line-name {
-  width: 90px;
+.save-score-section {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.line-score {
-  text-align: right;
+.save-score-section input {
+  margin-right: 10px;
+  padding: 5px;
 }
