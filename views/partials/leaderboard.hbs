@@ -1,8 +1,12 @@
 <div class="leaderboard">
   <p class="leaderboard-header">Leaderboard</p>
   <div class="leaderboard-content">
-    <span class="leaderboard-header" id="name">Name</span><span class="leaderboard-header" id="score">Score</span>
+    {{!-- <span class="leaderboard-header" id="name">Name</span><span class="leaderboard-header" id="score">Score</span> --}}
     <table id="scores">
+      <tr>
+        <th class="name-header">Name</th>
+        <th class="score-header">Score</th>
+      </tr>
       {{#each topScores}}
         {{> leaderboard_score}}
       {{/each}}

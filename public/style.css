@@ -49,6 +49,7 @@ body {
 }
 
 .content .stats-box {
+  display: flex;
   margin: auto;
   margin-bottom: 15px;
   max-width: 200px;
@@ -59,6 +60,7 @@ body {
 .stats-box .stat {
   margin: auto;
   color: rgb(128, 128, 128);
+  max-width: 150px;
 }
 
 /* Button Styles */
@@ -80,9 +82,19 @@ body {
   color: rgb(17, 17, 17);
 }
 
+.restart-and-home {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 35px;
+  margin: auto;
+  gap: 10px;
+}
 .restart-and-home button,
 #submit-score-btn {
   font-family: 'Roboto Mono';
+  margin: 0;
+  
   background-color: transparent;
   color: rgb(128, 128, 128);
   border: 1px solid rgb(128, 128, 128);
@@ -225,6 +237,16 @@ body {
   padding-right: 5px;
 }
 
+.name-header {
+  font-size: large;
+  text-align: left;
+}
+
+.score-header {
+  font-size: large;
+  text-align: right;
+}
+
 #scores {
   width: 100%;
 }
@@ -292,7 +314,7 @@ body {
   vertical-align: middle;
   font-family: 'Roboto Mono';
   color: rgb(128, 128, 128);
-  font-size: 32px;
+  font-size: 25px;
 }
 
 .game-button-container {

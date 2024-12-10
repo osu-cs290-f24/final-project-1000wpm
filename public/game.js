@@ -252,6 +252,11 @@ function startGame() {
 
     // Only start the game loop for checking typing
     gameInterval = setInterval(checkTyping, 50);
+
+     // Hide the score and timer elements
+     document.getElementById('score').classList.remove('hidden');
+     document.getElementById('timer').classList.remove('hidden');
+     document.getElementById('user-input').classList.remove('hidden');
 }
 
 async function updateLeaderboard() {
